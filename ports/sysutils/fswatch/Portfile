@@ -16,8 +16,8 @@ long_description    A cross-platform file change monitor with multiple \
                     Linux inotify and a stat-based backend.
 
 homepage            http://emcrisostomo.github.io/fswatch/
-master_sites        https://github.com/emcrisostomo/fswatch/archive/
-distfiles           ${name}-${version}.tar.gz
-checksums           rmd160 aa6ab0e879bce388263e6fe411761da27f219042 \
-                    sha256 5cf8088c5822e9f0ce6b67e2218e586108d90e5554a39fd0b9fdb4ae42cbdba8
-
+master_sites        https://github.com/emcrisostomo/fswatch/releases/download/1.3.9/
+distfiles           ${name}-${version}.zip
+checksums           rmd160 929cf38c072ed3c5843bc08fd125d0697fecf6f9 \
+                    sha256 f3e37317155dac122ebc4efef9236f273d03e85051bb2e63198ab5453b0a8c34
+use_zip             yes
