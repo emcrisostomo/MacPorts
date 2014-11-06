@@ -5,10 +5,6 @@ PortSystem          1.0
 PortGroup           github 1.0
 PortGroup           compiler_blacklist_versions 1.0
 
-compiler.fallback-append \
-                    macports-clang-3.5
-compiler.blacklist  gcc-4.0 gcc-4.2 apple-gcc-4.2 llvm-gcc-4.2 {clang < 137} macports-clang-3.4 macports-clang-3.3
-
 github.setup        emcrisostomo fswatch 1.4.5.2
 github.tarball_from releases
 
@@ -27,3 +23,14 @@ homepage            http://emcrisostomo.github.io/fswatch/
 
 checksums           rmd160 d0f990528c6cb6beaa2643efa7827ab74aa5e01e \
                     sha256 e35813d9ef1e7da4b1ee5ff0bdd579f389e4ff3975bc8253550827edaf620087
+
+# Blacklist compilers not supporting C++11.
+compiler.blacklist-append \
+                    *gcc-4.0 *gcc-4.2 {clang < 137}
+
+# Blacklist compilers crashing on Snow Leopard.
+# http://trac.macports.org/ticket/44726
+compiler.blacklist-append \
+                    macports-clang-3.3 macports-clang-3.4
+compiler.fallback-append \
+                    macports-clang-3.5
